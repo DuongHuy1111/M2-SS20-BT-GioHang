@@ -2,7 +2,9 @@
 @section('title', 'Cart Product')
 @section('content')
     <h2 class="text-center">Product Cart</h2>
+
     <div class="container">
+
         <div align="center">
             <a href="{{route('products.create')}}">
                 <button type="submit" class="btn btn-outline-warning btn-sm">Create</button>
@@ -55,8 +57,13 @@
                     </div>
                 </div>
             @endforeach
-        </div>
 
+            <div>
+
+            </div>
+
+        </div>
+        {{$products->links()}}
 
         {{--        <table class="table table-hover table-condensed">--}}
         {{--            <thead>--}}

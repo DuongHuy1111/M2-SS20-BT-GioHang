@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(4);
         return view('products.list', compact('products'));
     }
 
@@ -49,8 +49,7 @@ class ProductController extends Controller
             $image = $request->file('image');
             $path = $image->store('images', 'public');
             $product->image = $path;
-        } else {
-            dd('sdsd');
+
         }
         $product->save();
         return redirect()->route('products.index');
